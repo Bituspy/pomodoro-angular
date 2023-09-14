@@ -1,0 +1,85 @@
+<body style="display: flex;">
+
+<!-- LANDING PAGE -->
+  <br>
+<div class="home" [@fade]="continue ? 'hidden' : 'visible'">
+<img id="logo" style="margin-top: 80px;" src="assets/pomodorologo.png" alt="Logo">
+<h1 id="title">POMODORO</h1>
+<h3 id="message">Maintain motivation</h3>
+<button id="continue" (click)="toggleContinue()">Continue</button>
+</div>
+
+
+
+<!-- POMODORO SETTINGS MODAL -->
+<div class="modal-overlay" [ngClass]="{'show': showModal}">
+  <div class="modal">
+    <h2>Customize your pomodoro</h2>
+    <p>Change session and breaks duration</p>
+    <label>Pomodoro session duration : </label>
+    <input type="number"  [(ngModel)]="workMinutes" placeholder="Work minutes" min="1"><br>
+    <label>Break duration : </label>
+    <input type="number"  [(ngModel)]="breakMinutes" placeholder="Break minutes" min="1"><br>
+    <button class="button-55" (click)="closeModal()">Close</button>
+  </div>
+</div>
+
+<!-- POMODORO PAGE -->
+<div class="pomodoro" style="width: 100%;" *ngIf="continue" [@fade]="continue ? 'visible' : 'hidden'">
+
+      
+ <div class="title">Be more productive with pomodoro</div>
+       <div class="card">
+   <div class="controls">
+    <div class="cyclessettings">
+    <button (click)="incrementCycles()" class="buttoncycle" [disabled]="isRunning">+</button>
+  <input type="number" readonly [(ngModel)]="cycles" placeholder="Cycles" min="1">
+  <button (click)="decrementCycles()" class="buttoncycle" [disabled]="isRunning">-</button>
+  </div><br>
+  <button (click)="startTimer()" class="button-55" [disabled]="isRunning">Start</button>
+  <button (click)="pauseTimer()" class="button-55"[disabled]="!isRunning">Pause</button>
+  <button (click)="resetTimer()" class="button-55">Reset</button>
+  <button (click)="openModal()" class="button-55" [disabled]="isRunning">Settings</button>
+</div>
+
+<div *ngIf="randomActivity">
+  <h2>{{ randomActivity.activity }}</h2>
+    <p [innerHTML]="randomActivity.description.replace('\n', '<br>')"></p>
+</div>
+
+
+
+
+<br>
+<br>
+<br>
+    <div class="big-text" [ngClass]="isBreak ? 'activetext' : 'big-text'">{{ minutes < 10 ? '0' + minutes : minutes }}:{{ seconds < 10 ? '0' + seconds : seconds }}</div>
+    <hr>
+    <div class="message" [ngClass]="isBreak ? 'activetext' : 'message'"><img src="../../assets/cat-1.svg" alt="Cat" class="cat-image">Pomodoro #{{ currentCycle }} / {{ cycles }} </div>
+  </div>
+      <div>
+      <img class="catlogo-1-icon" alt="" src="assets/catlogo-1@2x.png" />
+ <svg id="wave-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,128L34.3,138.7C68.6,149,137,171,206,160C274.3,149,343,107,411,117.3C480,128,549,192,617,208C685.7,224,754,192,823,154.7C891.4,117,960,75,1029,96C1097.1,117,1166,203,1234,250.7C1302.9,299,1371,309,1406,314.7L1440,320L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"></path></svg>
+</div>
+</div>
+
+<!-- <div class="pomodoro" *ngIf="continue" [@fade]="continue ? 'visible' : 'hidden'">
+  <img src="assets/pomodorologo.png" alt="Logo">
+<div class="timer">
+  <span class="minutes">{{ minutes < 10 ? '0' + minutes : minutes }}</span>
+  <span>:</span>
+  <span class="seconds">{{ seconds < 10 ? '0' + seconds : seconds }}</span>
+</div>
+<hr>
+<div class="controls">
+  <button (click)="startTimer()" [disabled]="isRunning">Start</button>
+  <button (click)="pauseTimer()" [disabled]="!isRunning">Pause</button>
+  <button (click)="resetTimer()">Reset</button>
+</div>
+<svg id="wave-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,128L34.3,138.7C68.6,149,137,171,206,160C274.3,149,343,107,411,117.3C480,128,549,192,617,208C685.7,224,754,192,823,154.7C891.4,117,960,75,1029,96C1097.1,117,1166,203,1234,250.7C1302.9,299,1371,309,1406,314.7L1440,320L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"></path></svg>
+
+</div> -->
+
+
+
+</body>

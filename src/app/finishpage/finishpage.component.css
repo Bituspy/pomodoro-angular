@@ -1,0 +1,431 @@
+
+
+
+#message {
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  animation : textFade 8s infinite ease;
+}
+
+#logo {
+  width: 284px;
+  height: 273px;
+
+ 
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+animation: flipAndFade 4s infinite alternate;
+}
+
+
+
+@keyframes flipAndFade {
+  0% {
+    transform:translateX(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(-100%);
+    opacity: 1;
+  }
+}
+
+/* center #logo using only margin */
+
+
+/* POMODORO title under #logo by 20 pixels and centered with font family Jua and size 155*/
+
+#title {
+ font-family: 'Jua', sans-serif;
+ color:white;
+  font-size: 155px;
+  text-align: center;
+   display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  animation: textFade 8s infinite ease;
+}
+
+
+#continue {
+    background-image: linear-gradient(to right, #47AD82 50%, #47AD82 50%);
+  background-size: 200% 100%;
+  background-position: left bottom;
+  color: white;
+  border: 2px solid white;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  margin-top: 10px;
+  margin-left: 46%;
+
+  cursor: pointer;
+}
+
+/* on hover fill the #continue button like progress bar with animation */
+
+#continue:hover {
+  background-color: #47AD82;
+  background-image: linear-gradient(to right, #47AD82 50%, white 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all 0.4s ease-out;
+  color:#47AD82;
+}
+
+/* do reverse of the fill on leave mouse*/ 
+
+body {
+  background-color: #47AD82;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Small screens (up to 767px) */
+@media (max-width: 767px) {
+  #title {
+    font-size: 60px;
+    margin-top: 50px;
+  }
+  
+  #logo {
+    width: 200px;
+    height: auto;
+  }
+  
+  #message {
+    font-size: 18px;
+    margin-top: 20px;
+  }
+  #continue {
+    margin-left: 35%;
+  }
+
+  #wave-svg,.catlogo-1-icon {
+     display: none;
+  }
+}
+
+/* Medium screens (768px - 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  #title {
+    font-size: 100px;
+    margin-top: 500px;
+  }
+  
+  #logo {
+    width: 250px;
+    height: auto;
+  }
+  
+  #message {
+    font-size: 20px;
+    margin-top: 30px;
+  }
+  #continue {
+    margin-left: 43%;
+  }
+}
+
+/* Large screens (992px and above) */
+@media (min-width: 992px) {
+  #title {
+    font-size: 155px;
+    margin-top: 80px;
+  }
+  
+  #logo {
+    width: 284px;
+    height: 273px;
+  }
+  
+  #message {
+    font-size: 24px;
+    margin-top: 50px;
+  }
+  #continue {
+    margin-left: 46%;
+  }
+}
+
+#wave-svg {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      fill: #ffffff;
+    }
+
+.cat-1-icon {
+  position: absolute;
+  top: 405px;
+  left: 400px;
+  width: 27px;
+  height: 59px;
+  overflow: hidden;
+}
+.pomodoro-item {
+  position: absolute;
+  top: 396.01px;
+  left: 342.98px;
+  width: 397.02px;
+  height: 4.99px;
+}
+
+.catlogo-1-icon {
+  position: absolute;
+  bottom: 0;
+  left: 50%; /* Center the logo horizontally */
+  transform: translateX(-50%); /* Adjust to center the logo properly */
+  width: 20%; /* Use a percentage for width */
+  max-width: 151px; /* Set a maximum width */
+  height: auto; /* Let the height adjust automatically */
+  margin-bottom: 5%; /* Use a percentage for margin-bottom */
+  z-index: 99;
+}
+
+
+
+ .card {
+    border: 2px solid white;
+    border-radius: 10px;
+    background-color: transparent;
+    width: 80%; /* Adjust the width */
+    padding: 2%; /* Adjust the padding */
+    margin: auto;
+    min-height: 250px;
+    position: relative;
+    text-align: center;
+    color: white;
+    box-shadow: white 0px 0px 0px 2px inset, rgba(255, 255, 255, 0) 10px -10px 0px -3px, #2F4858 10px -10px, rgba(255, 255, 255, 0) 20px -20px 0px -3px, #275C6D 20px -20px, rgba(255, 255, 255, 0) 30px -30px 0px -3px, #15707C 30px -30px, rgba(255, 255, 255, 0) 40px -40px 0px -3px, #209987 40px -40px;
+  }
+
+  .title {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: -150px;
+    margin-bottom: 10px;
+    text-align: center;
+    color: white;
+
+  }
+
+  .big-text {
+    font-size: 10em;
+    font-family: 'Roboto', sans-serif; 
+    font-weight: 800;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  .message {
+    font-size: 1.2em;
+     margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  hr {
+    max-width: 320px;
+     margin-top: 50px;
+    margin-bottom: 10px;
+    border-width: 4px;
+    border-bottom: transparent;
+    border-color: #3da1cf;
+    
+
+  }
+  .cat-image {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin-left: 5px;
+    vertical-align: middle;
+   animation: flipAndFade 1s infinite alternate;
+}
+
+@keyframes flipAndFade {
+  0% {
+
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+
+  @media (max-width: 768px) {
+    .card {
+      width: 80%;
+      padding: 5%;
+    }
+  }
+
+  .activetext {
+    color: #31d2ee;
+  } 
+/*input css */
+
+input[type="number"] {
+  margin: 5px 5px 5px 5px;
+                    width: 4.2em;
+                    color: rgb(36, 35, 42);
+                    font-size: 32px;
+                    line-height: 20px;
+                    min-height: 28px;
+                    border-radius: 4px;
+                    padding: 8px 16px;
+                    border: 2px solid transparent;
+                    box-shadow: rgb(0 0 0 / 12%) 0px 1px 3px, rgb(0 0 0 / 24%) 0px 1px 2px;
+                    background: rgb(251, 251, 251);
+                    transition: all 0.1s ease 0s;
+                    text-align: center;
+                    margin-bottom: 5px;
+              
+                    
+}
+                    input[type="number"]:focus{
+                        border: 2px solid rgb(124, 138, 255);
+                    }
+                
+
+input[type=number]::-webkit-inner-spin-button {
+  display: none;
+}
+
+input[type=number]:focus{
+  outline: none;
+ }
+
+
+ .cyclessettings {
+  display: inline-block;
+ }
+ .buttoncycle {
+                    height: 54px;
+                    color: rgb(36, 35, 42);
+                    font-size: 32px;
+                    line-height: 20px;
+                    min-height: 28px;
+                    border-radius: 4px;
+                    padding: 8px 16px;
+                    border: 2px solid transparent;
+                    box-shadow: rgb(0 0 0 / 12%) 0px 1px 3px, rgb(0 0 0 / 24%) 0px 1px 2px;
+                    background: rgb(251, 251, 251);
+                    transition: all 0.1s ease 0s;
+                    text-align: center;
+                    margin-bottom: 5px;
+        
+ }
+
+ .buttoncycle:hover{
+   box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+  transform: translate3d(0, 1px, 0);
+  border-color: #fff;
+  background-color: #fff;
+  cursor: pointer;
+ }
+
+  .buttoncycle:disabled{
+    background-color: #fff;
+    cursor: not-allowed;
+     color: #adadad;
+  cursor: not-allowed;
+  opacity: .9;
+  pointer-events: none;
+  }
+
+/* CSS */
+.button-55 {
+  align-self: center;
+  background-color: #fff;
+  background-image: none;
+  background-position: 0 90%;
+  background-repeat: repeat no-repeat;
+  background-size: 4px 3px;
+  border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
+  box-sizing: border-box;
+  color: #41403e;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Neucha, sans-serif;
+  font-size: 1rem;
+  line-height: 23px;
+  outline: none;
+  padding: .75rem;
+  text-decoration: none;
+  transition: all 235ms ease-in-out;
+  border-bottom-left-radius: 15px 255px;
+  border-bottom-right-radius: 225px 15px;
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 225px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-55:hover {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+  transform: translate3d(0, 2px, 0);
+}
+
+.button-55:focus {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
+}
+
+.button-55:active {
+  box-shadow: rgba(0, 0, 0, .3) 2px 2px 4px -2px;
+  transform: translate3d(0, 4px, 0);
+}
+
+.button-55:disabled {
+  background-color: #f1f1f1;
+  border-color: #adadad;
+  box-shadow: none;
+  color: #adadad;
+  cursor: not-allowed;
+  opacity: .9;
+  pointer-events: none;
+}
+
+/* MODAL CSS */
+
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+}
+
+.modal {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.show {
+  display: flex;
+}

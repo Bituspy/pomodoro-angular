@@ -1,0 +1,17 @@
+<div class="container">
+<h1>Pomodoro</h1>
+<div *ngIf="!isStarted">
+<h2 *ngIf="name != null">Hello {{name}}</h2>
+<form >
+  Minutes : Seconds <br>
+  <input type="number" name="min" (change)="setMinutes($event)"/> <input name="sec" (change)="setSeconds($event)"  type="number"/> <br>
+  How many pomodoros you are planning to do? <br>
+  <input type="number" (change)="setPomodoroNumber($event)" /> <br>
+  <button (click)="start()">Start</button>
+</form>
+</div>
+<div *ngIf="isStarted">
+  {{min}}:{{sec}}
+</div>
+</div>
+
