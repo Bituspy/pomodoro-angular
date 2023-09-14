@@ -1,5 +1,11 @@
 # Pomodoro
 
+![Main screen](https://github.com/Bituspy/pomodoro-angular/assets/24206661/da5d3ce3-7cfe-45c4-9774-e92b436be3ba)
+
+<br>
+
+![home](https://github.com/Bituspy/pomodoro-angular/assets/24206661/0a6a7202-a757-495f-b0d9-36786fa9a489)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.1.
 
 ## Development server
